@@ -1,9 +1,30 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Plane } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { toast } = useToast();
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleBookNow = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    toast({
+      title: "Ready to book?",
+      description: "Please fill out the contact form below to start planning your adventure!",
+    });
+  };
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -28,19 +49,19 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => scrollToSection(item.href)}
+                className="text-foreground hover:text-primary transition-colors duration-300 cursor-pointer"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button variant="cta" size="lg">
+            <Button variant="cta" size="lg" onClick={handleBookNow}>
               Book Now
             </Button>
           </div>
@@ -58,16 +79,15 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 py-4 border-t border-border">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block py-2 text-foreground hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => scrollToSection(item.href)}
+                className="block py-2 text-left text-foreground hover:text-primary transition-colors duration-300 w-full"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <Button variant="cta" size="lg" className="mt-4 w-full">
+            <Button variant="cta" size="lg" className="mt-4 w-full" onClick={handleBookNow}>
               Book Now
             </Button>
           </nav>

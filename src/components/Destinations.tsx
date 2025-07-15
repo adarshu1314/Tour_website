@@ -1,11 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Star } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import mountainImage from "@/assets/mountain-destination.jpg";
 import culturalImage from "@/assets/cultural-destination.jpg";
 import cityImage from "@/assets/city-destination.jpg";
 
 const Destinations = () => {
+  const { toast } = useToast();
+
+  const handleLearnMore = (destinationName: string) => {
+    toast({
+      title: `Learn More: ${destinationName}`,
+      description: "Contact us to get detailed information about this amazing destination!",
+    });
+    
+    // Scroll to contact section
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const destinations = [
     {
       id: 1,
@@ -80,7 +96,11 @@ const Destinations = () => {
                   {destination.description}
                 </p>
                 
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <Button 
+                  variant="outline" 
+                  className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+                  onClick={() => handleLearnMore(destination.name)}
+                >
                   Learn More
                 </Button>
               </CardContent>

@@ -1,8 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Users, Award } from "lucide-react";
 import heroImage from "@/assets/hero-travel.jpg";
+import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const { toast } = useToast();
+
+  const scrollToDestinations = () => {
+    const element = document.querySelector('#destinations');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToPackages = () => {
+    const element = document.querySelector('#destinations');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    toast({
+      title: "Explore Our Packages",
+      description: "Check out our amazing travel packages below!",
+    });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -29,10 +50,20 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp">
-          <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="text-lg px-8 py-4"
+            onClick={scrollToDestinations}
+          >
             Explore Destinations
           </Button>
-          <Button variant="glass" size="lg" className="text-lg px-8 py-4">
+          <Button 
+            variant="glass" 
+            size="lg" 
+            className="text-lg px-8 py-4"
+            onClick={scrollToPackages}
+          >
             View Packages
           </Button>
         </div>
