@@ -1,0 +1,193 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MapPin, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+import SpainImg from "@/assets/Images/destination/Spain.jpg";
+import PortugalImg from "@/assets/Images/destination/Portugal.jpg";
+import MoroccoImg from "@/assets/Images/destination/Morocco.jpg";
+import EasternEuropeImg from "@/assets/Images/destination/eastern_europe.jpg";
+import BalkansImg from "@/assets/Images/destination/Balkans.jpg";
+import GreeceImg from "@/assets/Images/destination/Greece.jpg";
+import ScandinaviaImg from "@/assets/Images/destination/Scandinavia.jpg";
+import IcelandImg from "@/assets/Images/destination/Iceland.jpg";
+
+// Swiper Imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const Destinations = () => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+  const handleLearnMore = (destinationName: string) => {
+    toast({
+      title: `Learn More: ${destinationName}`,
+      description: "Contact us to get detailed information about this amazing destination!",
+    });
+
+    // Scroll to contact section
+    /*const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }*/
+  };
+
+const destinations = [
+  {
+    id: 1,
+    name: "Swiss Alps Adventure",
+    location: "Spain",
+    image: SpainImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "Spain captivates with flamenco rhythms, grand architecture, and Mediterranean coastlines.",
+  },
+  {
+    id: 2,
+    name: "Ancient Wonders",
+    location: "Portugal",
+    image: PortugalImg,
+    rating: 4.8,
+    price: "$899",
+    description:
+      "Portugal charms with golden beaches, Fado music, and historic seaside cities.",
+  },
+  {
+    id: 3,
+    name: "Urban Exploration",
+    location: "Morocco",
+    image: MoroccoImg,
+    rating: 4.9,
+    price: "$1,599",
+    description:
+      "Morocco enchants with souks, ancient medinas, and majestic desert landscapes.",
+  },
+  {
+    id: 4,
+    name: "Swiss Alps Adventure 5",
+    location: "Eastern Europe",
+    image: EasternEuropeImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "Eastern Europe features castles, cobbled towns, and deep-rooted cultural traditions.",
+  },
+  {
+    id: 5,
+    name: "Swiss Alps Adventure 6",
+    location: "Balkans",
+    image: BalkansImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "The Balkans offer stunning coastlines, ancient cities, and diverse cultural legacies.",
+  },
+  {
+    id: 6,
+    name: "Swiss Alps Adventure",
+    location: "Greece",
+    image: GreeceImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "Greece dazzles with ancient ruins, sunlit islands, and Mediterranean history.",
+  },
+  {
+    id: 7,
+    name: "Swiss Alps Adventure",
+    location: "Scandinavia ",
+    image: ScandinaviaImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "Scandinavia blends Viking heritage with fjords, design, and vibrant cities.",
+  },
+  {
+    id: 8,
+    name: "Swiss Alps Adventure",
+    location: "Iceland",
+    image: IcelandImg,
+    rating: 4.9,
+    price: "$1,299",
+    description:
+      "Iceland offers volcanic beauty, hot springs, and mystical Nordic landscapes.",
+  },
+];
+
+  return (
+    <section id="destinations" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Popular Destinations
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Discover the world's most amazing places with our carefully curated travel experiences
+          </p>
+        </div>
+
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {destinations.map((destination) => (
+            <SwiperSlide key={destination.id}>
+              <Card className="group overflow-hidden hover:shadow-large transition-all duration-500 border-0 bg-card">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
+                    <Star className="w-4 h-4 text-golden fill-current" />
+                    <span className="text-sm font-medium">{destination.rating}</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {destination.price}
+                  </div>
+                </div>
+
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm">{destination.location}</span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {destination.name}
+                  </h3>
+
+                  <p className="text-muted-foreground mb-4">
+                    {destination.description}
+                  </p>
+
+                  <Button
+                    variant="outline"
+                    className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+                    onClick={() => navigate("/destination-info")}
+                  >
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+};
+
+export default Destinations;
