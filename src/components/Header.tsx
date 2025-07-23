@@ -13,6 +13,7 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
+
   };
 
   const handleBookNow = () => {
@@ -43,7 +44,7 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-ocean rounded-lg flex items-center justify-center">
               <Plane className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-foreground">WanderLust</span>
+            <span className="text-2xl font-bold text-foreground">GLOBAL JOURNEY</span>
           </div>
 
           {/* Desktop Navigation */}
