@@ -63,18 +63,35 @@ const navigate = useNavigate();
           </p>
         </div>
 
-      <Swiper
+     <Swiper
   modules={[Autoplay]}
   spaceBetween={20}
-  slidesPerView={3}
-  centeredSlides={true} // 👈 centers the active slide
-  initialSlide={1} // start with center
+  centeredSlides={true}
   loop={true}
   autoplay={{
     delay: 3000,
     disableOnInteraction: false,
   }}
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+      centeredSlides: true,
+    },
+    640: {
+      slidesPerView: 1,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: true,
+    },
+    1024: {
+      slidesPerView: 3,
+      centeredSlides: true,
+    },
+  }}
 >
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
              <SwiperSlide key={service.id}>

@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div>
+            <div>
             <h3 className="text-lg font-semibold mb-6">Support</h3>
             <ul className="space-y-3">
               {support.map((item) => (
