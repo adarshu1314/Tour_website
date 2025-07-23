@@ -2,10 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Plane, Shield, Map, Headphones, Camera, Users } from "lucide-react";
 // Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination,Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ZoomSlide from "./ZoomSlide";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -47,6 +49,7 @@ const Services = () => {
   }
 ];
 
+const navigate = useNavigate();
 
   return (
     <section id="packages" className="py-20 bg-muted/30">
@@ -60,23 +63,26 @@ const Services = () => {
           </p>
         </div>
 
-           <Swiper
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{ clickable: false }}
-                    breakpoints={{
-                      768: { slidesPerView: 2 },
-                      1024: { slidesPerView: 3 },
-                    }}
-                  >
+      <Swiper
+  modules={[Autoplay]}
+  spaceBetween={20}
+  slidesPerView={3}
+  centeredSlides={true} // 👈 centers the active slide
+  initialSlide={1} // start with center
+  loop={true}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
              <SwiperSlide key={service.id}>
-            <Card key={index} className="group hover:shadow-medium transition-all duration-300 border-0 bg-card">
+              <ZoomSlide>
+            <Card key={index} onClick={() => navigate("/more-services")}
+    className="cursor-pointer group hover:shadow-medium transition-all duration-300 border-0 bg-card">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-20 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -89,11 +95,22 @@ const Services = () => {
                 </p>
               </CardContent>
             </Card>
+            </ZoomSlide>
             </SwiperSlide>
           ))}
         </div>
           </Swiper>
       </div>
+     {/* See More Services Link */}
+<div className="mt-10 text-center">
+  <span
+    onClick={() => navigate("/more-services")}
+    className="cursor-pointer text-lg font-medium text-muted-foreground hover:text-blue-600 transition-colors"
+  >
+    See More Services
+  </span>
+</div>
+
     </section>
   );
 };

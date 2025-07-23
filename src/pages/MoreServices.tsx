@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -52,8 +53,16 @@ const Services = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const navigate = useNavigate();
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
+          {/* Back Button */}
+      <button
+        onClick={() => navigate("/")}
+        className="mb-6 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 transition rounded-md"
+      >
+        ← Back to Home
+      </button>
       <motion.h1
         className="text-4xl font-bold text-center mb-6"
         initial="hidden"

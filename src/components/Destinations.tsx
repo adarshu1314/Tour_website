@@ -13,15 +13,19 @@ import ScandinaviaImg from "@/assets/Images/destination/Scandinavia.jpg";
 import IcelandImg from "@/assets/Images/destination/Iceland.jpg";
 
 // Swiper Imports
+import { motion } from "framer-motion";
+import { useSwiperSlide } from "swiper/react"; // to detect active slide
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ZoomSlide from "./ZoomSlide";
 
 const Destinations = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
+   const swiperSlide = useSwiperSlide();
   const handleLearnMore = (destinationName: string) => {
     toast({
       title: `Learn More: ${destinationName}`,
@@ -106,19 +110,21 @@ const destinations = [
           </p>
         </div>
 
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: false }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
+      <Swiper
+  modules={[Autoplay]}
+  spaceBetween={20}
+  slidesPerView={3}
+  centeredSlides={true} // 👈 centers the active slide
+  initialSlide={1} // start with center
+  loop={true}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+>
           {destinations.map((destination) => (
             <SwiperSlide key={destination.id}>
+           <ZoomSlide>
               <Card className="group overflow-hidden hover:shadow-large transition-all duration-500 border-0 bg-card">
                 <div className="relative overflow-hidden">
                   <img
@@ -127,9 +133,7 @@ const destinations = [
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   
-                  <div className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {destination.price}
-                  </div>
+                  
                 </div>
 
                 <CardContent className="p-6">
@@ -151,6 +155,7 @@ const destinations = [
                   </Button>
                 </CardContent>
               </Card>
+              </ZoomSlide>
             </SwiperSlide>
           ))}
         </Swiper>
