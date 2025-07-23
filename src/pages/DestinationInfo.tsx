@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-// Importing images properly
+// Images
 import SpainImg from "@/assets/Images/destination/Spain.jpg";
 import PortugalImg from "@/assets/Images/destination/Portugal.jpg";
 import MoroccoImg from "@/assets/Images/destination/Morocco.jpg";
@@ -9,7 +11,6 @@ import BalkansImg from "@/assets/Images/destination/Balkans.jpg";
 import GreeceImg from "@/assets/Images/destination/Greece.jpg";
 import ScandinaviaImg from "@/assets/Images/destination/Scandinavia.jpg";
 import IcelandImg from "@/assets/Images/destination/Iceland.jpg";
-import { useNavigate } from "react-router-dom";
 
 type Destination = {
   title: string;
@@ -68,39 +69,80 @@ const destinations: Destination[] = [
   },
 ];
 
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
 const DestinationInfo = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Button */}
+      {/* Back Button */}
       <button
         onClick={() => navigate("/")}
         className="mb-6 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 transition rounded-md"
       >
         ← Back to Home
       </button>
-      <h1 className="text-4xl font-bold text-center mb-16">Destinations We Cover</h1>
 
+      {/* Heading with animation */}
+      <motion.h1
+        className="text-4xl font-bold text-center mb-16"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        custom={0}
+      >
+        Destinations We Cover
+      </motion.h1>
+
+      {/* Destination Cards */}
       {destinations.map((destination, idx) => (
-        <div
+        <motion.div
           key={destination.title}
           className={`flex flex-col md:flex-row items-center mb-16 gap-8 ${
             idx % 2 !== 0 ? "md:flex-row-reverse" : ""
           }`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+          custom={idx + 1}
         >
-          <div className="md:w-1/2">
+          {/* Image */}
+          <motion.div
+            className="md:w-1/2"
+            variants={fadeInUp}
+            custom={idx + 1.2}
+          >
             <img
               src={destination.image}
               alt={destination.title}
-              className="w-full h-72 object-cover rounded-2xl shadow-md "
+              className="w-full h-72 object-cover rounded-2xl shadow-md"
             />
-          </div>
-          <div className="md:w-1/2">
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            className="md:w-1/2"
+            variants={fadeInUp}
+            custom={idx + 1.4}
+          >
             <h2 className="text-2xl font-semibold mb-4">{destination.title}</h2>
             <p className="text-gray-700">{destination.description}</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       ))}
     </div>
   );

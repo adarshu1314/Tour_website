@@ -10,11 +10,15 @@ const Footer = () => {
   ];
 
   const destinations = [
-    "Europe Tours",
-    "Asia Adventures",
-    "African Safaris",
-    "Americas Explorer",
-    "Australia & Oceania",
+"Spain",
+"Portugal",
+"Morocco",
+"Central Europe",
+"Eastern Europe",
+"Balkans",
+"Greece",
+"Scandinavia",
+"Iceland"
   ];
 
   const support = [
@@ -42,7 +46,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-ocean rounded-lg flex items-center justify-center">
                 <Plane className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold">WanderLust</span>
+              <span className="text-2xl font-bold">Global journey</span>
             </div>
             <p className="text-white/80 mb-6">
               Creating unforgettable travel experiences for adventurous souls around the world.
@@ -107,7 +111,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-white/60 text-sm">
-              © 2024 WanderLust. All rights reserved.
+              © 2024 Global journey. All rights reserved.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="text-white/60 hover:text-white text-sm transition-colors duration-300">

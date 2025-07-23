@@ -79,7 +79,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "hello@wanderlust.com",
+      details: "hello@Global journey.com",
     },
     {
       icon: Clock,

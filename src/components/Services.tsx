@@ -1,39 +1,52 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Plane, Shield, Map, Headphones, Camera, Users } from "lucide-react";
+// Swiper Imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Services = () => {
   const services = [
-    {
-      icon: Plane,
-      title: "Flight Booking",
-      description: "Best deals on flights worldwide with our exclusive partnerships",
-    },
-    {
-      icon: Shield,
-      title: "Travel Insurance",
-      description: "Comprehensive coverage for worry-free adventures",
-    },
-    {
-      icon: Map,
-      title: "Custom Itineraries",
-      description: "Personalized travel plans tailored to your preferences",
-    },
-    {
-      icon: Headphones,
-      title: "24/7 Support",
-      description: "Round-the-clock assistance wherever your journey takes you",
-    },
-    {
-      icon: Camera,
-      title: "Photography Tours",
-      description: "Capture stunning moments with professional guidance",
-    },
-    {
-      icon: Users,
-      title: "Group Travel",
-      description: "Organized group adventures for unforgettable shared experiences",
-    },
-  ];
+  {
+    id: 1,
+    icon: Plane,
+    title: "Leisure Groups",
+    description: "Bring families, friends, or affinity groups to Europe’s top destinations with curated logistics and experiences. Enjoy seamless coordination, expert guidance, and unforgettable shared journeys."
+  },
+  {
+    id: 2,
+    icon: Shield,
+    title: "MICE (Meetings, Incentives, Conferences, and Events)",
+    description: "We manage business events across Europe—from venue booking to cultural activities. Inspire collaboration with seamless execution of meetings, conferences, and incentive trips."
+  },
+  {
+    id: 3,
+    icon: Map,
+    title: "Special Interest Groups",
+    description: "Explore passions through customized tours like foodie trails, art trips, or cycling adventures. We craft unique programs with insider access and unforgettable group experiences."
+  },
+  {
+    id: 4,
+    icon: Headphones,
+    title: "Educational Tours",
+    description: "Engage students with hands-on learning through cultural, historical, and scientific tours. Safe, organized, and intellectually rich programs that go beyond classroom learning."
+  },
+  {
+    id: 5,
+    icon: Camera,
+    title: "Abled Travel (Accessible Travel)",
+    description: "Inclusive travel for all abilities with accessible lodging and adapted sightseeing. We ensure comfort, dignity, and joy while exploring Europe without limitations."
+  },
+  {
+    id: 6,
+    icon: Users,
+    title: "Signature Service Promise",
+    description: "Every journey is crafted with care, passion, and purpose. From planning to execution, we deliver enriching, hassle-free European travel experiences tailored to your needs."
+  }
+];
+
 
   return (
     <section id="packages" className="py-20 bg-muted/30">
@@ -47,8 +60,20 @@ const Services = () => {
           </p>
         </div>
 
+           <Swiper
+                    modules={[Navigation, Pagination]}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: false }}
+                    breakpoints={{
+                      768: { slidesPerView: 2 },
+                      1024: { slidesPerView: 3 },
+                    }}
+                  >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
+             <SwiperSlide key={service.id}>
             <Card key={index} className="group hover:shadow-medium transition-all duration-300 border-0 bg-card">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -64,8 +89,10 @@ const Services = () => {
                 </p>
               </CardContent>
             </Card>
+            </SwiperSlide>
           ))}
         </div>
+          </Swiper>
       </div>
     </section>
   );
