@@ -128,4 +128,6 @@ All colors MUST be HSL.
 .swiper-button-prev,
 .swiper-button-next {
   top: var(--swiper-navigation-top-offset, 25%);
+
+  
 }

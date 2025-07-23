@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const features = [
-    "Expert travel consultants",
-    "Handpicked destinations",
-    "Best price guarantee",
-    "24/7 customer support",
-    "Sustainable tourism",
-    "Local experiences",
+    "Leading DMC in Europe",
+    "Exceptional, client-focused service",
+    "Curated, personalized experiences",
+    "Multilingual, expert team",
+    "Innovation-driven solutions",
+    "Culinary and cultural immersion",
   ];
   const navigate = useNavigate();
   return (
@@ -18,15 +18,11 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              About WanderLust
+              About Global Journey
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6">
-              For over 15 years, we've been crafting extraordinary travel experiences that go beyond ordinary tourism. Our passion for exploration and commitment to excellence has made us a trusted partner for thousands of adventurous souls.
-            </p>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              We believe that travel is not just about reaching a destination—it's about the journey, the connections you make, and the memories that last a lifetime. Our team of expert travel consultants works tirelessly to create personalized experiences that match your dreams and exceed your expectations.
+             At Global Journey, we are dedicated to delivering exceptional European travel experiences through expert destination knowledge, innovative technology, and a passionate, multilingual team. Our comprehensive services—from group tours and MICE to special interest and accessible travel—are crafted with quality, cultural authenticity, and personal attention, ensuring every journey is seamless, enriching, and truly unforgettable for our clients and partners.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">

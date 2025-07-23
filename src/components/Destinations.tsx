@@ -38,81 +38,57 @@ const Destinations = () => {
 const destinations = [
   {
     id: 1,
-    name: "Swiss Alps Adventure",
-    location: "Spain",
+    name: "Spain",
     image: SpainImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "Spain captivates with flamenco rhythms, grand architecture, and Mediterranean coastlines.",
   },
   {
     id: 2,
-    name: "Ancient Wonders",
-    location: "Portugal",
+    name: "Portugal",
     image: PortugalImg,
-    rating: 4.8,
-    price: "$899",
     description:
       "Portugal charms with golden beaches, Fado music, and historic seaside cities.",
   },
   {
     id: 3,
-    name: "Urban Exploration",
-    location: "Morocco",
+    name: "Morocco",
     image: MoroccoImg,
-    rating: 4.9,
-    price: "$1,599",
     description:
       "Morocco enchants with souks, ancient medinas, and majestic desert landscapes.",
   },
   {
     id: 4,
-    name: "Swiss Alps Adventure 5",
-    location: "Eastern Europe",
+    name: "Eastern Europe",
     image: EasternEuropeImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "Eastern Europe features castles, cobbled towns, and deep-rooted cultural traditions.",
   },
   {
     id: 5,
-    name: "Swiss Alps Adventure 6",
-    location: "Balkans",
+    name: "Balkans",
     image: BalkansImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "The Balkans offer stunning coastlines, ancient cities, and diverse cultural legacies.",
   },
   {
     id: 6,
-    name: "Swiss Alps Adventure",
-    location: "Greece",
+    name: "Greece",
     image: GreeceImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "Greece dazzles with ancient ruins, sunlit islands, and Mediterranean history.",
   },
   {
     id: 7,
-    name: "Swiss Alps Adventure",
-    location: "Scandinavia ",
+    name: "Scandinavia ",
     image: ScandinaviaImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "Scandinavia blends Viking heritage with fjords, design, and vibrant cities.",
   },
   {
     id: 8,
-    name: "Swiss Alps Adventure",
-    location: "Iceland",
+    name: "Iceland",
     image: IcelandImg,
-    rating: 4.9,
-    price: "$1,299",
     description:
       "Iceland offers volcanic beauty, hot springs, and mystical Nordic landscapes.",
   },
@@ -135,7 +111,7 @@ const destinations = [
           spaceBetween={20}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
+          pagination={{ clickable: false }}
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -150,21 +126,14 @@ const destinations = [
                     alt={destination.name}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                    <Star className="w-4 h-4 text-golden fill-current" />
-                    <span className="text-sm font-medium">{destination.rating}</span>
-                  </div>
+                  
                   <div className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                     {destination.price}
                   </div>
                 </div>
 
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm">{destination.location}</span>
-                  </div>
-
+                  
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {destination.name}
                   </h3>
