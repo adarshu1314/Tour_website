@@ -15,13 +15,13 @@ const Services = () => {
     id: 1,
     icon: Plane,
     title: "Leisure Groups",
-    description: "Bring families, friends, or affinity groups to Europe’s top destinations with curated logistics and experiences. Enjoy seamless coordination, expert guidance, and unforgettable shared journeys."
+    description: "Bring families, friends, or affinity groups to Europe’s top destinations with curated logistics and experiences. Enjoy seamless coordination, expert guidance and unforgettable shared journeys."
   },
   {
     id: 2,
     icon: Shield,
     title: "MICE (Meetings, Incentives, Conferences, and Events)",
-    description: "We manage business events across Europe—from venue booking to cultural activities. Inspire collaboration with seamless execution of meetings, conferences, and incentive trips."
+    description: "We manage business events across Europe—from venue booking to cultural activities. Inspire collaboration with seamless execution of meetings, conferences and incentive trips."
   },
   {
     id: 3,
@@ -33,19 +33,19 @@ const Services = () => {
     id: 4,
     icon: Headphones,
     title: "Educational Tours",
-    description: "Engage students with hands-on learning through cultural, historical, and scientific tours. Safe, organized, and intellectually rich programs that go beyond classroom learning."
+    description: "Engage students with hands-on learning through cultural, historical and scientific tours. Safe, organized and intellectually rich programs that go beyond classroom learning."
   },
   {
     id: 5,
     icon: Camera,
     title: "Abled Travel (Accessible Travel)",
-    description: "Inclusive travel for all abilities with accessible lodging and adapted sightseeing. We ensure comfort, dignity, and joy while exploring Europe without limitations."
+    description: "Inclusive travel for all abilities with accessible lodging and adapted sightseeing. We ensure comfort, dignity and joy while exploring Europe without limitations."
   },
   {
     id: 6,
     icon: Users,
     title: "Signature Service Promise",
-    description: "Every journey is crafted with care, passion, and purpose. From planning to execution, we deliver enriching, hassle-free European travel experiences tailored to your needs."
+    description: "Every journey is crafted with care, passion and purpose. From planning to execution, we deliver enriching, hassle-free European travel experiences tailored to your needs."
   }
 ];
 
@@ -119,13 +119,13 @@ const navigate = useNavigate();
           </Swiper>
       </div>
      {/* See More Services Link */}
-<div className="mt-10 text-center">
-  <span
+<div className="mt-10 flex justify-center">
+  <div
     onClick={() => navigate("/more-services")}
-    className="cursor-pointer text-lg font-medium text-muted-foreground hover:text-blue-600 transition-colors"
+    className="cursor-pointer px-6 py-3 rounded-lg text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md"
   >
     See More Services
-  </span>
+</div>
 </div>
 
     </section>

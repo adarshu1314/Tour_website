@@ -11,7 +11,7 @@ import BalkansImg from "@/assets/Images/destination/Balkans.jpg";
 import GreeceImg from "@/assets/Images/destination/Greece.jpg";
 import ScandinaviaImg from "@/assets/Images/destination/Scandinavia.jpg";
 import IcelandImg from "@/assets/Images/destination/Iceland.jpg";
-
+import centraleuropeImg from "@/assets/Images/destination/central-europe.jpg";
 // Swiper Imports
 import { motion } from "framer-motion";
 import { useSwiperSlide } from "swiper/react"; // to detect active slide
@@ -45,57 +45,64 @@ const destinations = [
     name: "Spain",
     image: SpainImg,
     description:
-      "Spain captivates with flamenco rhythms, grand architecture, and Mediterranean coastlines.",
+      "Spain captivates with flamenco rhythms, grand architecture and Mediterranean coastlines.",
   },
   {
     id: 2,
     name: "Portugal",
     image: PortugalImg,
     description:
-      "Portugal charms with golden beaches, Fado music, and historic seaside cities.",
+      "Portugal charms with golden beaches, Fado music and historic seaside cities.",
   },
   {
     id: 3,
     name: "Morocco",
     image: MoroccoImg,
     description:
-      "Morocco enchants with souks, ancient medinas, and majestic desert landscapes.",
+      "Morocco enchants with souks, ancient medinas and majestic desert landscapes.",
   },
   {
     id: 4,
     name: "Eastern Europe",
     image: EasternEuropeImg,
     description:
-      "Eastern Europe features castles, cobbled towns, and deep-rooted cultural traditions.",
+      "Eastern Europe features castles, cobbled towns and deep-rooted cultural traditions.",
   },
   {
     id: 5,
     name: "Balkans",
     image: BalkansImg,
     description:
-      "The Balkans offer stunning coastlines, ancient cities, and diverse cultural legacies.",
+      "The Balkans offer stunning coastlines, ancient cities and diverse cultural legacies.",
   },
   {
     id: 6,
     name: "Greece",
     image: GreeceImg,
     description:
-      "Greece dazzles with ancient ruins, sunlit islands, and Mediterranean history.",
+      "Greece dazzles with ancient ruins, sunlit islands and Mediterranean history.",
   },
   {
     id: 7,
     name: "Scandinavia ",
     image: ScandinaviaImg,
     description:
-      "Scandinavia blends Viking heritage with fjords, design, and vibrant cities.",
+      "Scandinavia blends Viking heritage with fjords, design and vibrant cities.",
   },
   {
     id: 8,
     name: "Iceland",
     image: IcelandImg,
     description:
-      "Iceland offers volcanic beauty, hot springs, and mystical Nordic landscapes.",
+      "Iceland offers volcanic beauty, hot springs and mystical Nordic landscapes.",
   },
+   {
+    id: 9,
+    name: "Central Europe",
+    image: centraleuropeImg,
+     description: "Central Europe offers vibrant cities, rich history, diverse cultures and beautiful landscapes for memorable travel.",
+  },
+  
 ];
 
   return (

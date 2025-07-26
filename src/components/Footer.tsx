@@ -1,12 +1,14 @@
+import { link } from "fs";
 import { Plane, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate =  useNavigate();
   const quickLinks = [
-    "About Us",
-    "Destinations",
-    "Tour Packages",
-    "Travel Blog",
-    "Contact",
+    {LinkName : "About Us" , Goto : "/about-us"},
+    {LinkName :"Destinations", Goto : "/destination-info"},
+    {LinkName : "Services",  Goto : "/more-services"} ,
+    {LinkName : "Contact", Goto :"#contact"}
   ];
 
   const destinations = [
@@ -42,10 +44,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-ocean rounded-lg flex items-center justify-center">
-                <Plane className="w-6 h-6 text-white" />
-              </div>
+              <div className="flex items-center gap-2">
+                <img
+            src="/src/assets/WhatsApp_Image_2025-07-26_at_12.30.56_PM-removebg-preview (1).svg"
+            alt="Global Journey Logo"
+          className="h-10 w-auto"
+        />
               <span className="text-2xl font-bold">Global journey</span>
             </div>
             <p className="text-white/80 mb-6">
@@ -67,15 +71,32 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-white/80 hover:text-white transition-colors duration-300">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+           <ul className="space-y-3">
+  {quickLinks.map((link) => (
+    <li key={link.LinkName}>
+      {link.LinkName === "Contact" ? (
+        <a
+          href={link.Goto}
+          className="text-white/80 hover:text-white transition-colors duration-300"
+        >
+          {link.LinkName}
+        </a>
+      ) : (
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(link.Goto);
+          }}
+          className="text-white/80 hover:text-white transition-colors duration-300"
+        >
+          {link.LinkName}
+        </a>
+      )}
+    </li>
+  ))}
+</ul>
+
           </div>
 
           {/* Destinations */}

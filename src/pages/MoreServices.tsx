@@ -1,37 +1,44 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import Abled from "@/assets/Images/moreServices/Abled.jpg";
+import Mice from "@/assets/Images/moreServices/Mice.jpg";
+import Leisure from "@/assets/Images/moreServices/Leisure.jpg";
+import Educational from "@/assets/Images/moreServices/Educational.jpg";
+import specialinterest from "@/assets/Images/moreServices/specialinterest.jpg";
+
+
 
 const services = [
   {
     title: "Leisure Groups",
     description:
-      "Travel is best enjoyed together. Our Leisure Groups service brings friends, families, or affinity groups to Europe’s most dazzling destinations—think wine tasting in Portugal’s Douro Valley or flamenco nights in Spain. We handle logistics, accommodation, and curated activities, allowing groups to focus on discovery and connection, all with expert guidance and smooth coordination every step of the way.",
-    image: "https://source.unsplash.com/featured/?travel,friends",
+      "Travel is best enjoyed together. Our Leisure Groups service brings friends, families, or affinity groups to Europe’s most dazzling destinations—think wine tasting in Portugal’s Douro Valley or flamenco nights in Spain. We handle logistics, accommodation and curated activities, allowing groups to focus on discovery and connection, all with expert guidance and smooth coordination every step of the way.",
+    image: Leisure,
   },
   {
     title: "MICE (Meetings, Incentives, Conferences, and Events)",
     description:
       "Elevate your business gatherings with Global Journey’s MICE expertise. We organize impactful meetings, dynamic incentive trips, and seamless conferences in vibrant cities like Barcelona or the elegant capitals of Scandinavia. From venue selection and technical support to creative team-building and cultural experiences, we deliver flawless events that inspire collaboration and exceed expectations.",
-    image: "https://source.unsplash.com/featured/?conference,meeting",
+    image: Mice,
   },
   {
     title: "Special Interest Groups",
     description:
       "Fuel your passions with a journey designed just for you. Whether you seek a foodie tour through Greece, a cycling adventure in the Balkans, or an art exploration across Eastern Europe, we curate tailor-made programs aligned to shared interests. Our deep local connections unlock exclusive experiences, transforming travel into something truly extraordinary for every special interest group.",
-    image: "https://source.unsplash.com/featured/?group,cycling",
+    image: specialinterest,
   },
   {
     title: "Educational Tours",
     description:
-      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture, and innovation. From interactive archaeology workshops in Greece to science expeditions in Iceland, we ensure every itinerary is intellectually engaging, safe, and meticulously organized—opening young minds to new perspectives beyond the classroom.",
-    image: "https://source.unsplash.com/featured/?students,education",
+      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture and innovation. From interactive archaeology workshops in Greece to science expeditions in Iceland, we ensure every itinerary is intellectually engaging, safe and meticulously organized—opening young minds to new perspectives beyond the classroom.",
+    image: Educational,
   },
   {
     title: "Abled Travel (Accessible Travel)",
     description:
-      "We believe travel should be accessible to all. Our Abled Travel service ensures that travelers with mobility, sensory, or other special requirements enjoy Europe’s wonders without barriers. From accessible accommodations in Prague to adapted sightseeing in Lisbon, we prioritize comfort, dignity, and unforgettable adventure—making the beauty of Europe open to everyone.",
-    image: "https://source.unsplash.com/featured/?accessible,travel",
+      "We believe travel should be accessible to all. Our Abled Travel service ensures that travelers with mobility, sensory, or other special requirements enjoy Europe’s wonders without barriers. From accessible accommodations in Prague to adapted sightseeing in Lisbon, we prioritize comfort, dignity and unforgettable adventure—making the beauty of Europe open to everyone.",
+    image: Abled,
   },
 ];
 
@@ -70,7 +77,7 @@ const Services = () => {
         variants={fadeIn}
         custom={0}
       >
-        Under Services
+        Our Services
       </motion.h1>
 
       <motion.p

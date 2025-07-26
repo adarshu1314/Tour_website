@@ -46,7 +46,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-white/90 animate-fadeInUp">
-          Explore breathtaking destinations, create unforgettable memories, and embark on the journey of a lifetime
+          Explore breathtaking destinations, create unforgettable memories and embark on the journey of a lifetime
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp">
@@ -64,7 +64,7 @@ const Hero = () => {
             className="text-lg px-8 py-4"
             onClick={scrollToPackages}
           >
-            View Packages
+            View Services
           </Button>
         </div>
 
