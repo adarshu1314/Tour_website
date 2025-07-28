@@ -42,7 +42,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-           src="/src/assets/WhatsApp Image 2025-07-26 at 12.30.56 PM.svg"
+           src="src/assets/Images/Logo/Header-Logo.svg"
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />

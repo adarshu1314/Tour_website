@@ -46,7 +46,7 @@ const Footer = () => {
           <div>
               <div className="flex items-center gap-2">
                 <img
-            src="/src/assets/WhatsApp_Image_2025-07-26_at_12.30.56_PM-removebg-preview (1).svg"
+            src="src/assets/Images/Logo/Footer-Logo.svg"
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
