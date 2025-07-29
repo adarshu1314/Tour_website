@@ -15,19 +15,19 @@ const Services = () => {
     id: 1,
     icon: Plane,
     title: "Leisure Groups",
-    description: "Bring families, friends, or affinity groups to Europe’s top destinations with curated logistics and experiences. Enjoy seamless coordination, expert guidance and unforgettable shared journeys."
+    description: "Bring families, friends or affinity groups to Europe’s top destinations with curated logistics and experiences. Enjoy seamless coordination, expert guidance and unforgettable shared journeys."
   },
   {
     id: 2,
     icon: Shield,
-    title: "MICE (Meetings, Incentives, Conferences, and Events)",
+    title: "MICE (Meetings, Incentives, Conferences and Events)",
     description: "We manage business events across Europe—from venue booking to cultural activities. Inspire collaboration with seamless execution of meetings, conferences and incentive trips."
   },
   {
     id: 3,
     icon: Map,
     title: "Special Interest Groups",
-    description: "Explore passions through customized tours like foodie trails, art trips, or cycling adventures. We craft unique programs with insider access and unforgettable group experiences."
+    description: "Explore passions through customized tours like foodie trails, art trips or cycling adventures. We craft unique programs with insider access and unforgettable group experiences."
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const navigate = useNavigate();
     <section id="packages" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground gradient-sunset mb-4">
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

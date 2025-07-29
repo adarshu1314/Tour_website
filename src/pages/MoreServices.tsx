@@ -13,11 +13,11 @@ const services = [
   {
     title: "Leisure Groups",
     description:
-      "Travel is best enjoyed together. Our Leisure Groups service brings friends, families, or affinity groups to Europe’s most dazzling destinations—think wine tasting in Portugal’s Douro Valley or flamenco nights in Spain. We handle logistics, accommodation and curated activities, allowing groups to focus on discovery and connection, all with expert guidance and smooth coordination every step of the way.",
+      "Travel is best enjoyed together. Our Leisure Groups service brings friends, families or affinity groups to Europe’s most dazzling destinations imagine  wine tasting in Portugal’s Douro Valley or flamenco nights in Spain. We handle logistics, accommodation and curated activities, allowing groups to focus on discovery and connection, all with expert guidance and smooth coordination every step of the way.",
     image: Leisure,
   },
   {
-    title: "MICE (Meetings, Incentives, Conferences, and Events)",
+    title: "MICE (Meetings, Incentives, Conferences and Events)",
     description:
       "Elevate your business gatherings with Global Journey’s MICE expertise. We organize impactful meetings, dynamic incentive trips, and seamless conferences in vibrant cities like Barcelona or the elegant capitals of Scandinavia. From venue selection and technical support to creative team-building and cultural experiences, we deliver flawless events that inspire collaboration and exceed expectations.",
     image: Mice,
@@ -25,19 +25,19 @@ const services = [
   {
     title: "Special Interest Groups",
     description:
-      "Fuel your passions with a journey designed just for you. Whether you seek a foodie tour through Greece, a cycling adventure in the Balkans, or an art exploration across Eastern Europe, we curate tailor-made programs aligned to shared interests. Our deep local connections unlock exclusive experiences, transforming travel into something truly extraordinary for every special interest group.",
+      "Fuel your passions with a journey designed just for you. Whether you seek a foodie tour through Greece, a cycling adventure in the Balkans or an art exploration across Eastern Europe, we curate tailor-made programs aligned to shared interests. Our deep local connections unlock exclusive experiences, transforming travel into something truly extraordinary for every special interest group.",
     image: specialinterest,
   },
   {
     title: "Educational Tours",
     description:
-      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture and innovation. From interactive archaeology workshops in Greece to science expeditions in Iceland, we ensure every itinerary is intellectually engaging, safe and meticulously organized—opening young minds to new perspectives beyond the classroom.",
+      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture and innovation. From interactive archaeology workshops in Greece to science expeditions in Iceland, we ensure every itinerary is intellectually engaging, safe and meticulously organized opening young minds to new perspectives beyond the classroom.",
     image: Educational,
   },
   {
     title: "Abled Travel (Accessible Travel)",
     description:
-      "We believe travel should be accessible to all. Our Abled Travel service ensures that travelers with mobility, sensory, or other special requirements enjoy Europe’s wonders without barriers. From accessible accommodations in Prague to adapted sightseeing in Lisbon, we prioritize comfort, dignity and unforgettable adventure—making the beauty of Europe open to everyone.",
+      "We believe travel should be accessible to all. Our Abled Travel service ensures that travelers with mobility, sensory or other special requirements enjoy Europe’s wonders without barriers. From accessible accommodations in Prague to adapted sightseeing in Lisbon, we prioritize comfort, dignity and unforgettable adventure making the beauty of Europe open to everyone.",
     image: Abled,
   },
 ];

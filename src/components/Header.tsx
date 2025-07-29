@@ -42,12 +42,13 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-           src="src/assets/Images/Logo/Header-Logo.svg"
+           src="src\assets\Images\Logo\Header-Logo.svg"
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
            
-            <span className="text-2xl font-bold text-foreground">GLOBAL JOURNEY</span>
+            <span className="text-2xl font-bold text-orange-500">GLOBAL JOURNEY</span>
+
           </div>
 
           {/* Desktop Navigation */}

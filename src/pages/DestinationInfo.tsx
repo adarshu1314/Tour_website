@@ -33,7 +33,7 @@ const destinations: Destination[] = [
       "Portugal’s charm lies in its golden beaches, soulful Fado music and centuries-old cities. Explore Lisbon’s hills, Porto’s riverside and the fairytale palaces of Sintra. Renowned for its port wine and seafaring history, Portugal invites you to discover authentic traditions and flavors.",
   },
   {
-    title: "Morocco",
+    title: "United Kingdom",
     image: MoroccoImg,
     description:
       "A gateway to Africa, Morocco enchants with vibrant souks, ancient medinas and desert landscapes. Wander Marrakech’s bustling squares, discover Fez’s labyrinthine streets and marvel at the Atlas Mountains—an immersive blend of Berber, Arab and European influences.",
@@ -46,7 +46,7 @@ const destinations: Destination[] = [
   },
      {
    
-    title: "central-europe",
+    title: "Central-Europe",
     image: centraleuropeImg,
     description:
       "Home to imperial cities and grand palaces, Central Europe features Vienna’s elegance, Prague’s medieval charm, Salzburg’s musical legacy and beautiful alpine scenery; a crossroads of culture, history and architecture.",
@@ -67,14 +67,9 @@ const destinations: Destination[] = [
     title: "Scandinavia",
     image: ScandinaviaImg,
     description:
-      "A land of dramatic fjords, serene forests and sophisticated cities, Scandinavia—covering Norway, Sweden, and Denmark—blends Viking history, rich design heritage and a high quality of life. Highlights include Oslo’s modernism, Stockholm’s waterways and Copenhagen’s culinary scene.",
+      "A land of dramatic fjords, serene forests and sophisticated cities, Scandinavia—covering Norway, Sweden and Denmark—blends Viking history, rich design heritage and a high quality of life. Highlights include Oslo’s modernism, Stockholm’s waterways and Copenhagen’s culinary scene.",
   },
-  {
-    title: "Iceland",
-    image: IcelandImg,
-    description:
-      "Renowned for its breath taking volcanic landscapes and natural wonders, Iceland offers glaciers, geothermal springs, black sand beaches and the enchanting Northern Lights. Its Viking heritage and mystical scenery make it a haven for adventurers and lovers of unspoiled nature.",
-  },
+  
 ];
 
 // Animation variants

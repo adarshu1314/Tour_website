@@ -56,7 +56,7 @@ const destinations = [
   },
   {
     id: 3,
-    name: "Morocco",
+    name: "United Kingdom",
     image: MoroccoImg,
     description:
       "Morocco enchants with souks, ancient medinas and majestic desert landscapes.",
@@ -89,15 +89,9 @@ const destinations = [
     description:
       "Scandinavia blends Viking heritage with fjords, design and vibrant cities.",
   },
-  {
-    id: 8,
-    name: "Iceland",
-    image: IcelandImg,
-    description:
-      "Iceland offers volcanic beauty, hot springs and mystical Nordic landscapes.",
-  },
+  
    {
-    id: 9,
+    id: 8,
     name: "Central Europe",
     image: centraleuropeImg,
      description: "Central Europe offers vibrant cities, rich history, diverse cultures and beautiful landscapes for memorable travel.",
@@ -109,8 +103,11 @@ const destinations = [
     <section id="destinations" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Popular Destinations
+          <h2 
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ color: "#f4a750" }}
+           >
+              Popular Destinations 
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover the world's most amazing places with our carefully curated travel experiences

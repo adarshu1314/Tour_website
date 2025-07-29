@@ -76,7 +76,7 @@ const learnMoreAboutUs = () => {
 </div>
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12">
+        <h2 className="text-2xl md:text-3xl text-orange-500 text-center mb-12">
           Global Journey – Your DMC Partner in Europe
         </h2>
 
