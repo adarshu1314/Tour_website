@@ -31,7 +31,7 @@ const services = [
   {
     title: "Educational Tours",
     description:
-      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture and innovation. From interactive archaeology workshops in Greece to science expeditions in Iceland, we ensure every itinerary is intellectually engaging, safe and meticulously organized opening young minds to new perspectives beyond the classroom.",
+      "Learning comes alive with our Educational Tours, immersing students and educators in Europe’s rich history, culture and innovation. From interactive archaeology workshops in Greece to STEM and language workshops in London, as well as insightful industrial visits, we ensure every itinerary is intellectually engaging, safe and meticulously organized opening young minds to new perspectives beyond the classroom.",
     image: Educational,
   },
   {

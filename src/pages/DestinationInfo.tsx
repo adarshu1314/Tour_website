@@ -36,7 +36,7 @@ const destinations: Destination[] = [
     title: "United Kingdom",
     image: MoroccoImg,
     description:
-      "A gateway to Africa, Morocco enchants with vibrant souks, ancient medinas and desert landscapes. Wander Marrakech’s bustling squares, discover Fez’s labyrinthine streets and marvel at the Atlas Mountains—an immersive blend of Berber, Arab and European influences.",
+      "The United Kingdom captivates with its fusion of tradition and trendsetting culture, anchored by the fascinating city of London. Explore the grandeur of Buckingham Palace, the mysteries of the Tower of London and the treasures of the British Museum. From iconic sites like Big Ben and the London Eye to world-class West End theatre, vibrant markets and renowned green spaces, London sets the stage for Britain’s unforgettable allure. Beyond the capital, discover ancient Stonehenge, charming Cotswolds villages, medieval York, the Roman heritage of Bath and Scotland’s majestic landscapes. In every region, historic castles, picturesque countryside and a rich tapestry of music, art and cuisine invite you to experience the best of Britain with every visit.",
   },
   {
     title: "Eastern Europe",

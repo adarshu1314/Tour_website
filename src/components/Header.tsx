@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Plane } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import HeaderLogoImg from "@/assets/Images/Logo/Header-Logo.svg";
+import FooterLogoImg from "@/assets/Images/Logo/Footer-Logo.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +44,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-           src="src/assets/Headerimg.svg"
+           src = {HeaderLogoImg}
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
