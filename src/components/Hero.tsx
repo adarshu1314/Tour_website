@@ -49,11 +49,11 @@ const Hero = () => {
           Explore breathtaking destinations, create unforgettable memories and embark on the journey of a lifetime
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp ">
           <Button 
             variant="hero" 
             size="lg" 
-            className="text-lg px-8 py-4"
+            className="text-lg px-8 py-4 bg-gradient-sunset"
             onClick={scrollToDestinations}
           >
             Explore Destinations

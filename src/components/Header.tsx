@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Plane } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import HeaderLogoImg from "@/assets/Images/Logo/Header-Logo.svg";
-import FooterLogoImg from "@/assets/Images/Logo/Footer-Logo.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,8 +48,9 @@ const Header = () => {
           className="h-10 w-auto"
         />
            
-            <span className="text-2xl font-bold text-orange-500">GLOBAL JOURNEY</span>
-
+            <span className="text-2xl font-bold textOrange">GLOBAL JOURNEY
+            <p className="HeaderName">Your DMC Partner For Europe</p>
+</span>
           </div>
 
           {/* Desktop Navigation */}

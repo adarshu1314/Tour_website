@@ -92,7 +92,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 textOrange">
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -104,7 +104,7 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="border-0 bg-card shadow-medium">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6 textOrange">Send us a message</h3>
               
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -175,7 +175,7 @@ const Contact = () => {
             {contactInfo.map((item, index) => (
               <Card key={index} className="border-0 bg-card hover:shadow-medium transition-shadow duration-300">
                 <CardContent className="p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-ocean rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-sunset rounded-full flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>

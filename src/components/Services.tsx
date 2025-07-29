@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ZoomSlide from "./ZoomSlide";
 import { useNavigate } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const Services = () => {
   const services = [
@@ -55,7 +56,7 @@ const navigate = useNavigate();
     <section id="packages" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground gradient-sunset mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground textOrange mb-4">
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -99,7 +100,7 @@ const navigate = useNavigate();
             <Card key={index} onClick={() => navigate("/more-services")}
     className="cursor-pointer group hover:shadow-medium transition-all duration-300 border-0 bg-card">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-20 bg-gradient-ocean rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-20 bg-gradient-sunset rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -120,12 +121,10 @@ const navigate = useNavigate();
       </div>
      {/* See More Services Link */}
 <div className="mt-10 flex justify-center">
-  <div
-    onClick={() => navigate("/more-services")}
-    className="cursor-pointer px-6 py-3 rounded-lg text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md"
-  >
-    See More Services
-</div>
+ 
+   <Button variant="cta" size="lg"   onClick={() => navigate("/more-services")}>
+               See More Services
+            </Button>
 </div>
 
     </section>

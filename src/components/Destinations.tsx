@@ -104,8 +104,7 @@ const destinations = [
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: "#f4a750" }}
+            className="text-4xl md:text-5xl font-bold mb-4 textOrange"
            >
               Popular Destinations 
           </h2>
@@ -169,7 +168,7 @@ const destinations = [
 
                   <Button
                     variant="outline"
-                    className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+                    className="w-full group-hover:textOrange group-hover:text-white transition-colors duration-300 "
                     onClick={() => navigate("/destination-info")}
                   >
                     Learn More

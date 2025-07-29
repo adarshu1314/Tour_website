@@ -17,11 +17,11 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 textOrange ">
               About Global Journey
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-6 ">
              At Global Journey, we are dedicated to delivering exceptional European travel experiences through expert destination knowledge, innovative technology and a passionate, multilingual team. Our comprehensive services—from group tours and MICE to special interest and accessible travel—are crafted with quality, cultural authenticity and personal attention, ensuring every journey is seamless, enriching and truly unforgettable for our clients as well as partners.
             </p>
 
