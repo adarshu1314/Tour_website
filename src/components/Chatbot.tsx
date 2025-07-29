@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, KeyboardEvent, ChangeEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaCommentDots } from "react-icons/fa"; // 👈 icon from react-icons
 
 type Message = {
   from: "user" | "bot";
   text: string;
-  // sources removed for display
   sources?: {
     id: string;
     metadata: { source: string };
@@ -18,7 +18,7 @@ const Chatbot: React.FC = () => {
     { from: "bot", text: "Hi! How can I help you today?" },
   ]);
   const [input, setInput] = useState("");
-  const [isOpen, setIsOpen] = useState(true); // for controlling chatbot visibility
+  const [isOpen, setIsOpen] = useState(false); // Initially closed
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -45,7 +45,6 @@ const Chatbot: React.FC = () => {
 
       const data: { answer: string } = await response.json();
 
-      // Show toast with answer
       toast.info(data.answer, {
         position: "top-right",
         autoClose: 5000,
@@ -53,7 +52,6 @@ const Chatbot: React.FC = () => {
         closeOnClick: true,
       });
 
-      // Add bot answer message, no sources shown
       const botMessage: Message = {
         from: "bot",
         text: data.answer,
@@ -83,71 +81,84 @@ const Chatbot: React.FC = () => {
     setInput(e.target.value);
   };
 
-  if (!isOpen) return null; // Do not render chatbot if closed
-
   return (
     <>
-      <div className="fixed bottom-4 right-4 left-4 md:left-auto md:right-4 max-w-md md:w-96 bg-white border rounded-lg shadow-lg flex flex-col overflow-hidden z-50 h-[480px] md:h-[600px]">
-        <div className="bg-blue-600 text-white px-4 py-3 font-semibold text-lg flex justify-between items-center">
-          <span>Chatbot</span>
-          <button
-            onClick={() => setIsOpen(false)}
-            aria-label="Close chatbot"
-            className="text-white hover:text-gray-200 font-bold text-xl leading-none"
-            title="Close"
-            type="button"
-          >
-            &times;
-          </button>
-        </div>
+      {/* Floating Chat Icon Button */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 bg-gradient-sunset text-white rounded-full p-4 shadow-lg hover:bg-gradient-sunset z-50"
+          aria-label="Open chatbot"
+          title="Open Chatbot"
+        >
+          <FaCommentDots className="text-xl" />
+        </button>
+      )}
 
-        {/* Messages area */}
-        <div className="flex-1 p-4 overflow-y-auto space-y-4 text-sm md:text-base scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-          {messages.map((msg, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col ${
-                msg.from === "user" ? "items-end" : "items-start"
-              }`}
+      {/* Chatbot Box */}
+      {isOpen && (
+        <div className="fixed bottom-4 right-4 left-4 md:left-auto md:right-4 max-w-md md:w-96 bg-white border rounded-lg shadow-lg flex flex-col overflow-hidden z-50 h-[480px] md:h-[600px]">
+          <div className="bg-gradient-sunset text-white px-4 py-3 font-semibold text-lg flex justify-between items-center">
+            <span>Chatbot</span>
+            <button
+              onClick={() => setIsOpen(false)}
+              aria-label="Close chatbot"
+              className="text-white hover:text-gray-200 font-bold text-xl leading-none"
+              title="Close"
+              type="button"
             >
+              &times;
+            </button>
+          </div>
+
+          {/* Messages area */}
+          <div className="flex-1 p-4 overflow-y-auto space-y-4 text-sm md:text-base scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+            {messages.map((msg, idx) => (
               <div
-                className={`rounded px-3 py-2 max-w-[80%] whitespace-pre-wrap ${
-                  msg.from === "user"
-                    ? "bg-blue-100 text-blue-900"
-                    : "bg-gray-100 text-gray-800"
+                key={idx}
+                className={`flex flex-col ${
+                  msg.from === "user" ? "items-end" : "items-start"
                 }`}
               >
-                {msg.text}
+                <div
+                  className={`rounded px-3 py-2 max-w-[80%] whitespace-pre-wrap ${
+                    msg.from === "user"
+                      ? "bg-blue-100 text-blue-900"
+                      : "bg-gray-100 text-gray-800"
+                  }`}
+                >
+                  {msg.text}
+                </div>
               </div>
-            </div>
-          ))}
-          <div ref={bottomRef} />
-        </div>
+            ))}
+            <div ref={bottomRef} />
+          </div>
 
-        {/* Input area */}
-        <div className="flex border-t">
-          <input
-            type="text"
-            aria-label="Type your message"
-            className="flex-1 px-4 py-3 text-sm md:text-base outline-none"
-            placeholder="Type your message..."
-            value={input}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-            autoComplete="off"
-            spellCheck={false}
-          />
-          <button
-            onClick={sendMessage}
-            className="bg-blue-600 text-white px-5 py-3 md:py-4 text-sm md:text-base font-semibold hover:bg-blue-700 transition"
-            aria-label="Send message"
-          >
-            Send
-          </button>
+          {/* Input area */}
+          <div className="flex border-t">
+            <input
+              type="text"
+              aria-label="Type your message"
+              className="flex-1 px-4 py-3 text-sm md:text-base outline-none"
+              placeholder="Type your message..."
+              value={input}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+              autoComplete="off"
+              spellCheck={false}
+            />
+            <button
+              onClick={sendMessage}
+              className="bg-gradient-sunset text-white px-5 py-3 md:py-4 text-sm md:text-base font-semibold hover:bg-gradient-sunset transition"
+              aria-label="Send message"
+            >
+              Send
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* Toast container to render toasts */}
+      {/* Toast container */}
       <ToastContainer />
     </>
   );
