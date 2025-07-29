@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/chatbot";
+import Chatbot from "@/components/Chatbot";
 import ScrollButtons from "@/components/ScrollButtons";
 
 const Index = () => {
