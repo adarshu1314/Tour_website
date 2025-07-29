@@ -39,9 +39,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp">
-         Global Journey - Your Trusted DMC Partner in Europe.
+         
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-golden to-white">
-            Adventure
+          Your Trusted DMC Partner In Europe.
           </span>
         </h1>
         
