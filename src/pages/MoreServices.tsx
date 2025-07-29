@@ -6,6 +6,7 @@ import Mice from "@/assets/Images/moreServices/Mice.jpg";
 import Leisure from "@/assets/Images/moreServices/Leisure.jpg";
 import Educational from "@/assets/Images/moreServices/Educational.jpg";
 import specialinterest from "@/assets/Images/moreServices/specialinterest.jpg";
+import ScrollButtons from "@/components/ScrollButtons";
 
 
 
@@ -66,7 +67,7 @@ const Services = () => {
           {/* Back Button */}
       <button
         onClick={() => navigate("/")}
-        className="mb-6 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 transition rounded-md"
+        className="mb-6 px-4 py-2 text-white bg-gradient-sunset hover:bg-gradient-sunset transition rounded-md"
       >
         ← Back to Home
       </button>
@@ -126,6 +127,8 @@ const Services = () => {
           </motion.div>
         </div>
       ))}
+
+         <ScrollButtons/>
     </div>
   );
 };

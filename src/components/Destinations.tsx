@@ -59,7 +59,7 @@ const destinations = [
     name: "United Kingdom",
     image: MoroccoImg,
     description:
-      "Morocco enchants with souks, ancient medinas and majestic desert landscapes.",
+      "A timeless blend of royal heritage, vibrant London, iconic landmarks and cultural wonders.",
   },
   {
     id: 4,
@@ -168,7 +168,7 @@ const destinations = [
 
                   <Button
                     variant="outline"
-                    className="w-full group-hover:textOrange group-hover:text-white transition-colors duration-300 "
+                    className="bg-gradient-sunset w-full text-white  group-hover:text-white transition-colors duration-300 "
                     onClick={() => navigate("/destination-info")}
                   >
                     Learn More

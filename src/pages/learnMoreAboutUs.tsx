@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import heroImage from "@/assets/hero-travel.jpg";
 import { useNavigate } from "react-router-dom";
+import ScrollButtons from "@/components/ScrollButtons";
 const sections = [
   {
     title: "Our Vision",
@@ -65,7 +66,7 @@ const learnMoreAboutUs = () => {
   {/* Back Button Positioned Top-Left */}
   <button
     onClick={() => navigate("/")}
-    className="absolute top-4 left-4 z-20 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 transition rounded-md"
+    className="absolute top-4 left-4 z-20 px-4 py-2 text-white bg-gradient-sunset hover:bg-gradient-sunset transition rounded-md"
   >
     ← Back to Home
   </button>
@@ -83,7 +84,7 @@ const learnMoreAboutUs = () => {
         <div className="space-y-12">
           {sections.map((section, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-primary">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-orange-500 ">
                 {section.title}
               </h3>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -97,7 +98,9 @@ const learnMoreAboutUs = () => {
           At Global Journey, we unite expertise, passion, and technology to deliver the very best of Europe to our clients—one remarkable journey at a time.
         </p>
       </div>
+         <ScrollButtons/>
     </div>
+    
   );
 };
 
