@@ -42,7 +42,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-           src="src\assets\Images\Logo\Header-Logo.svg"
+           src="src/assets/Headerimg.svg"
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
