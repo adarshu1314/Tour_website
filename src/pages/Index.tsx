@@ -5,6 +5,8 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/chatbot";
+import ScrollButtons from "@/components/ScrollButtons";
 
 const Index = () => {
   return (
@@ -16,6 +18,8 @@ const Index = () => {
       <About />
       <Contact />
       <Footer />
+         <Chatbot /> {/* ✅ Include Chatbot */}
+         <ScrollButtons/>
     </div>
   );
 };
