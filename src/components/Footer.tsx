@@ -1,6 +1,8 @@
 import { link } from "fs";
 import { Plane, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import FooterLogoImg from "@/assets/Images/Logo/Footer-Logo.svg";
+
 
 const Footer = () => {
   const navigate =  useNavigate();
@@ -14,13 +16,12 @@ const Footer = () => {
   const destinations = [
 "Spain",
 "Portugal",
-"Morocco",
+"United Kingdom",
 "Central Europe",
 "Eastern Europe",
 "Balkans",
 "Greece",
-"Scandinavia",
-"Iceland"
+"Scandinavia"
   ];
 
   const support = [
@@ -46,7 +47,7 @@ const Footer = () => {
           <div>
               <div className="flex items-center gap-2">
                 <img
-            src="src/assets/Images/Logo/Footer-Logo.svg"
+            src = {FooterLogoImg}
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
