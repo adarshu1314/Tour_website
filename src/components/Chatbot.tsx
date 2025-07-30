@@ -25,50 +25,55 @@ const Chatbot: React.FC = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = async () => {
-    if (!input.trim()) return;
+const sendMessage = async () => {
+  if (!input.trim()) return;
 
-    const userMessage: Message = { from: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
+  // Step 1: Add user message to localStorage history
+  const currentHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
 
-    try {
-      const response = await fetch("http://localhost:8000/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: input }),
-      });
+  const userEntry = { role: "user", content: input };
+  currentHistory.push(userEntry);
+  localStorage.setItem("chatHistory", JSON.stringify(currentHistory));
 
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.statusText}`);
-      }
+  // Step 2: Update UI with user message
+  const userMessage: Message = { from: "user", text: input };
+  setMessages((prev) => [...prev, userMessage]);
+  setInput("");
 
-      const data: { answer: string } = await response.json();
+  try {
+    // Step 3: Send full chat history as request
+    const response = await fetch("http://127.0.0.1:8000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: currentHistory }),
+    });
 
-      toast.info(data.answer, {
-        position: "top-right",
-        autoClose: 5000,
-        pauseOnHover: true,
-        closeOnClick: true,
-      });
-
-      const botMessage: Message = {
-        from: "bot",
-        text: data.answer,
-      };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error(error);
-      toast.error("Oops! Something went wrong. Please try again later.", {
-        position: "top-right",
-        autoClose: 5000,
-      });
-      setMessages((prev) => [
-        ...prev,
-        { from: "bot", text: "Oops! Something went wrong. Please try again later." },
-      ]);
+    if (!response.ok) {
+      throw new Error(`Server error: ${response.statusText}`);
     }
-  };
+
+    const data: {response: string}  = await response.json();
+
+    // Step 4: Append bot response to localStorage
+    const botEntry = { role: "assistant", content: data.response };
+    const updatedHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
+    updatedHistory.push(botEntry);
+    localStorage.setItem("chatHistory", JSON.stringify(updatedHistory));
+
+    // Step 5: Update UI with bot response
+    const botMessage: Message = { from: "bot", text: data.response };
+    setMessages((prev) => [...prev, botMessage]);
+
+  
+  } catch (error) {
+    console.error(error);
+    setMessages((prev) => [
+      ...prev,
+      { from: "bot", text: "Oops! Something went wrong. Please try again later." },
+    ]);
+  }
+};
+
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.nativeEvent.isComposing) {
