@@ -14,6 +14,8 @@ type Message = {
 };
 
 const Chatbot: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [messages, setMessages] = useState<Message[]>([
     { from: "bot", text: "Hi! How can I help you today?" },
   ]);
@@ -28,21 +30,18 @@ const Chatbot: React.FC = () => {
 const sendMessage = async () => {
   if (!input.trim()) return;
 
-  // Step 1: Add user message to localStorage history
   const currentHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
-
   const userEntry = { role: "user", content: input };
   currentHistory.push(userEntry);
   localStorage.setItem("chatHistory", JSON.stringify(currentHistory));
 
-  // Step 2: Update UI with user message
   const userMessage: Message = { from: "user", text: input };
   setMessages((prev) => [...prev, userMessage]);
   setInput("");
+  setIsLoading(true); // 👉 Show loader
 
   try {
-    // Step 3: Send full chat history as request
-    const response = await fetch("http://127.0.0.1:8000/chat", {
+    const response = await fetch("http://rag-backend.nlysislab.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: currentHistory }),
@@ -52,27 +51,27 @@ const sendMessage = async () => {
       throw new Error(`Server error: ${response.statusText}`);
     }
 
-    const data: {response: string}  = await response.json();
+    const data: { response: string } = await response.json();
 
-    // Step 4: Append bot response to localStorage
     const botEntry = { role: "assistant", content: data.response };
     const updatedHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
     updatedHistory.push(botEntry);
     localStorage.setItem("chatHistory", JSON.stringify(updatedHistory));
 
-    // Step 5: Update UI with bot response
     const botMessage: Message = { from: "bot", text: data.response };
     setMessages((prev) => [...prev, botMessage]);
 
-  
   } catch (error) {
     console.error(error);
     setMessages((prev) => [
       ...prev,
       { from: "bot", text: "Oops! Something went wrong. Please try again later." },
     ]);
+  } finally {
+    setIsLoading(false); // 👉 Hide loader
   }
 };
+
 
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -136,6 +135,13 @@ const sendMessage = async () => {
                 </div>
               </div>
             ))}
+            {isLoading && (
+  <div className="flex justify-start items-center">
+    <div className="loader border-4 border-blue-200 border-t-blue-600 rounded-full w-6 h-6 animate-spin"></div>
+    <span className="ml-2 text-gray-500">Generating Response...</span>
+  </div>
+)}
+
             <div ref={bottomRef} />
           </div>
 

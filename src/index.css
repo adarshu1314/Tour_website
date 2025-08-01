@@ -141,3 +141,10 @@ All colors MUST be HSL.
   top: var(--swiper-navigation-top-offset, 25%);
  
 }
+/* Add this in your global CSS or Tailwind config */
+.loader {
+  border-style: solid;
+  border-width: 4px;
+  border-color: #bfdbfe transparent transparent transparent;
+  border-radius: 50%;
+}
