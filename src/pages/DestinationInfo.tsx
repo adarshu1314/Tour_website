@@ -37,7 +37,7 @@ const destinations: Destination[] = [
     title: "United Kingdom",
     image: MoroccoImg,
     description:
-      "The United Kingdom captivates with its fusion of tradition and trendsetting culture, anchored by the fascinating city of London. Explore the grandeur of Buckingham Palace, the mysteries of the Tower of London and the treasures of the British Museum. From iconic sites like Big Ben and the London Eye to world-class West End theatre, vibrant markets and renowned green spaces, London sets the stage for Britain’s unforgettable allure. Beyond the capital, discover ancient Stonehenge, charming Cotswolds villages, medieval York, the Roman heritage of Bath and Scotland’s majestic landscapes. In every region, historic castles, picturesque countryside and a rich tapestry of music, art and cuisine invite you to experience the best of Britain with every visit.",
+      "The United Kingdom blends tradition with modern culture, anchored by dynamic London. Explore Buckingham Palace, the Tower of London and the British Museum. Big Ben, the London Eye, West End shows, bustling markets and green parks showcase the capital’s charm. Beyond, discover Stonehenge, the Cotswolds, York’s medieval streets, Roman Bath and Scotland’s majestic beauty. Across Britain, historic castles, countryside and a rich mix of art, music and cuisine promise memorable experiences.",
   },
   {
     title: "Eastern Europe",
@@ -47,7 +47,7 @@ const destinations: Destination[] = [
   },
      {
    
-    title: "Central-Europe",
+    title: "Central Europe",
     image: centraleuropeImg,
     description:
       "Home to imperial cities and grand palaces, Central Europe features Vienna’s elegance, Prague’s medieval charm, Salzburg’s musical legacy and beautiful alpine scenery; a crossroads of culture, history and architecture.",
@@ -102,7 +102,7 @@ const DestinationInfo = () => {
 
       {/* Heading with animation */}
       <motion.h1
-        className="text-4xl font-bold text-center mb-16"
+        className="textOrange text-4xl font-bold text-center mb-16"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}

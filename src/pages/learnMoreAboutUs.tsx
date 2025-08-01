@@ -6,32 +6,32 @@ const sections = [
   {
     title: "Our Vision",
     content:
-      "At Global Journey, our ambition is to be a leading DMC in Europe, renowned for delivering world-class service, unmatched destination expertise and innovative travel solutions. We are driven by pioneering technology and shaped by a dedicated team, all committed to creating exceptional experiences for our clients, industry partners and stakeholders.",
+      "At Global Journey, our ambition is to be a leading DMC in Europe, renowned for delivering world-class service, unmatched destination expertise and innovative travel solutions. We are driven by pioneering technology and shaped by a dedicated team, all committed to creating exceptional experiences for your clients, industry partners and stakeholders.",
   },
   {
     title: "Who We Are",
     content:
-      "Guided by the belief that every journey creates a lifelong memory, we are passionate about curating unforgettable travel moments across Europe and beyond. Our team’s deep local knowledge, operational excellence and personalized touch allow us to design journeys that meet the unique needs of each traveller and partner.",
+      "Guided by the belief that every journey creates a lifelong memory. We are passionate about curating unforgettable travel moments across Europe and beyond. Our team’s deep local knowledge, operational excellence and personalized touch allow us to design journeys that meet the unique needs of each traveller and partner.",
   },
   {
     title: "Our Expertise",
     content:
-      "Our portfolio covers a comprehensive spectrum of travel management services, including leisure group tours, MICE programmes, special interest journeys, educational tours and accessible travel. From curated packages and exclusive experiences to accommodation, transportation, attractions and culinary adventures, we deliver every element our clients need from a dedicated DMC partner.",
+      "Our portfolio covers a comprehensive spectrum of travel management services, including leisure group tours, MICE Programmes, Special Interest Journeys, Educational Tours and Accessible Travel. From curated packages and exclusive experiences to accommodation, transportation, attractions and  meals, we deliver every element our clients need from a dedicated DMC partner.",
   },
   {
     title: "Curated Experiences",
     content:
-      "We take pride in hand-selecting and negotiating the most outstanding travel products—hotels, villas, experiences, restaurants and attractions—ensuring every offering meets rigorous standards of quality and value.",
+      "We take pride in hand-picking and negotiating the most outstanding travel products hotels, villas, experiences, restaurants and attractions along with memories ensuring every offering meets rigorous standards of quality and value.",
   },
   {
     title: "Our Team",
     content:
-      "The heart of Global Journey is our dynamic, multilingual team. Our field staff and guides speak a variety of European and international languages to ensure clear communication and local insight. We also operate an in-house logistics and transport unit, managing a diverse fleet and supplier network.",
+      "At the heart of Global Journey is our dynamic, multilingual team. Our onground staff and guides speak a variety of European and Indian languages to ensure clear communication and local insight. We also operate an in-house logistics and transport unit, managing a diverse fleet and supplier network.",
   },
   {
     title: "Service Excellence",
     content:
-      "Customer satisfaction is our top priority. Our dedicated Quality Assurance team monitors each stage of the travel experience—pre-tour, on-tour and post-tour—responding to feedback and resolving issues quickly to ensure top-tier service.",
+      "Customer satisfaction is our top priority. Our dedicated Quality Assurance team monitors each stage of the travel experience pre-tour, on-tour and post-tour responding to feedback and resolving issues quickly to ensure top-tier service.",
   },
   {
     title: "Culinary, Culture & Connections",
@@ -71,13 +71,13 @@ const learnMoreAboutUs = () => {
     ← Back to Home
   </button>
 
-  <h1 className="relative z-10 text-white text-4xl md:text-5xl font-bold text-center px-4">
+  <h1 className=" textOrange relative z-10 text-white text-4xl md:text-5xl font-bold text-center px-4">
     About Us
   </h1>
 </div>
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl md:text-3xl text-orange-500 text-center mb-12">
+        <h2 className="text-2xl md:text-3xl text-orange-500 font-semibold text-center mb-12">
           Global Journey – Your DMC Partner in Europe
         </h2>
 
@@ -95,7 +95,7 @@ const learnMoreAboutUs = () => {
         </div>
 
         <p className="text-lg text-center mt-16 text-muted-foreground max-w-3xl mx-auto">
-          At Global Journey, we unite expertise, passion, and technology to deliver the very best of Europe to our clients—one remarkable journey at a time.
+          At Global Journey, we unite expertise, passion and technology to deliver the very best of Europe to our clients-one remarkable journey at a time.
         </p>
       </div>
          <ScrollButtons/>

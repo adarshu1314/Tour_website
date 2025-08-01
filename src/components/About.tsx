@@ -9,7 +9,7 @@ const About = () => {
     "Curated, personalized experiences",
     "Multilingual, expert team",
     "Innovation-driven solutions",
-    "Culinary and cultural immersion",
+    "Culinary, cultural and immersive experience",
   ];
   const navigate = useNavigate();
   return (
@@ -22,8 +22,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 ">
-             At Global Journey, we are dedicated to delivering exceptional European travel experiences through expert destination knowledge, innovative technology and a passionate, multilingual team. Our comprehensive services—from group tours and MICE to special interest and accessible travel—are crafted with quality, cultural authenticity and personal attention, ensuring every journey is seamless, enriching and truly unforgettable for our clients as well as partners.
-            </p>
+              At Global Journey, a premier Destination Management Company (DMC), we are committed to providing outstanding European travel experiences. Backed by expert destination knowledge, cutting-edge technology and a passionate multilingual team, our wide range of services from group tours and MICE to special interest and accessible travel are thoughtfully crafted with quality, cultural authenticity and personalized care, ensuring every journey is seamless, enriching and truly unforgettable for both your clients as well as our partners.            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (

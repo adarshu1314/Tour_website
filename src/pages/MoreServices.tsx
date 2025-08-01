@@ -8,11 +8,9 @@ import Educational from "@/assets/Images/moreServices/Educational.jpg";
 import specialinterest from "@/assets/Images/moreServices/specialinterest.jpg";
 import ScrollButtons from "@/components/ScrollButtons";
 
-
-
 const services = [
   {
-    title: "Leisure Groups",
+    title: " Leisure Groups",
     description:
       "Travel is best enjoyed together. Our Leisure Groups service brings friends, families or affinity groups to Europe’s most dazzling destinations imagine  wine tasting in Portugal’s Douro Valley or flamenco nights in Spain. We handle logistics, accommodation and curated activities, allowing groups to focus on discovery and connection, all with expert guidance and smooth coordination every step of the way.",
     image: Leisure,
@@ -20,7 +18,7 @@ const services = [
   {
     title: "MICE (Meetings, Incentives, Conferences and Events)",
     description:
-      "Elevate your business gatherings with Global Journey’s MICE expertise. We organize impactful meetings, dynamic incentive trips, and seamless conferences in vibrant cities like Barcelona or the elegant capitals of Scandinavia. From venue selection and technical support to creative team-building and cultural experiences, we deliver flawless events that inspire collaboration and exceed expectations.",
+      "Elevate your business gatherings with Global Journey’s MICE expertise. We organize impactful meetings, dynamic incentive trips and seamless conferences in vibrant cities like Barcelona or the elegant capitals of Scandinavia. From venue selection and technical support to creative team-building and cultural experiences, we deliver flawless events that inspire collaboration and exceed expectations.",
     image: Mice,
   },
   {
@@ -63,8 +61,8 @@ const Services = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-          {/* Back Button */}
+    <div className="textOrange max-w-7xl mx-auto px-4 py-12">
+      {/* Back Button */}
       <button
         onClick={() => navigate("/")}
         className="mb-6 px-4 py-2 text-white bg-gradient-sunset hover:bg-gradient-sunset transition rounded-md"
@@ -72,7 +70,7 @@ const Services = () => {
         ← Back to Home
       </button>
       <motion.h1
-        className="text-4xl font-bold text-center mb-6"
+        className="textOrange text-4xl font-bold text-center mb-6"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
@@ -88,8 +86,14 @@ const Services = () => {
         variants={fadeIn}
         custom={1}
       >
-        <strong>Discover Our Signature Services</strong><br />
-        At Global Journey, we transform travel dreams into seamless, memorable realities. From crafting unique group journeys to curating special interest tours and facilitating remarkable educational and accessible adventures, our expertise covers every aspect of European travel. Explore how our suite of personalized services enhances every step of your journey.
+        <strong> Discover Our Signature Services</strong>
+        <br />
+        At Global Journey, we transform travel dreams into seamless, memorable
+        realities. From crafting unique group journeys to curating special
+        interest tours and facilitating remarkable educational and accessible
+        adventures, our expertise covers every aspect of European travel.
+        Explore how our suite of personalized services enhances every step of
+        your journey.
       </motion.p>
 
       {services.map((service, index) => (
@@ -110,7 +114,7 @@ const Services = () => {
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-72 object-cover rounded-xl shadow-lg"
+              className="w-full max-h-96 object-contain rounded-xl shadow-lg bg-white"
             />
           </motion.div>
 
@@ -128,7 +132,7 @@ const Services = () => {
         </div>
       ))}
 
-         <ScrollButtons/>
+      <ScrollButtons />
     </div>
   );
 };

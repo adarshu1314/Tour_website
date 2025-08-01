@@ -26,10 +26,7 @@ const Footer = () => {
 
   const support = [
     "Help Center",
-    "Travel Insurance",
-    "Booking Terms",
     "Privacy Policy",
-    "Cancellation Policy",
   ];
 
   const socialLinks = [
@@ -51,7 +48,9 @@ const Footer = () => {
             alt="Global Journey Logo"
           className="h-10 w-auto"
         />
-              <span className="text-2xl font-bold">Global journey</span>
+              <span className="text-2xl font-bold textOrange">GLOBAL JOURNEY
+                <p className="HeaderName">Your DMC Partner For Europe</p>
+        </span>
             </div>
             <p className="text-white/80 mb-6">
               Creating unforgettable travel experiences for adventurous souls around the world.
