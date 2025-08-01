@@ -40,6 +40,8 @@ const sendMessage = async () => {
   setInput("");
   setIsLoading(true); // 👉 Show loader
 
+  
+
   try {
     const response = await fetch("http://rag-backend.nlysislab.com/chat", {
       method: "POST",
